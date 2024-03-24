@@ -16,7 +16,7 @@ services:
       - MYSQL_PASSWORD=todolist
       - TZ=Asia/Shanghai
     volumes:
-      - ./config/sql:/docker-entrypoint-initdb.d/
+      - ~/workplace/mountdir/config/sql:/docker-entrypoint-initdb.d/
     ports:
       - "3306:3306"
 
@@ -25,6 +25,6 @@ services:
     image: redis:latest
     restart: always
     volumes:
-      - /usr/local/redis:/usr/local/redis
+      - ~/workplace/mountdir/redis:/usr/local/redis
     ports:
       - "6379:6379"
