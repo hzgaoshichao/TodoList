@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 services:
   todo_list:
@@ -22,7 +22,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: todo_list
     volumes:
-      - /var/lib/mysql:/var/lib/mysql
+      - ~/workplace/mountdir/todolist/v1/mysql:/var/lib/mysql
     ports:
       - 3306:3306
 
@@ -35,6 +35,6 @@ services:
     privileged: true
 
     volumes:
-      - /usr/local/redis:/var/lib/redis
+      - ~/workplace/mountdir/todolist/v1/redis:/var/lib/redis
     ports:
       - 6379:6379
